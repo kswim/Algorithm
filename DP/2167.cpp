@@ -11,7 +11,6 @@ int main(){
 
    scanf("%d %d", &N, &M);
 
-
    for(int i=1; i<=N; i++){
       for(int j=1; j<=M; j++)
          scanf("%d", &num[i][j]);
@@ -36,16 +35,9 @@ int main(){
    int u, v, x, y;
    int result;
    for(int i=0; i<K; i++){
-      scanf("%d %d %d %d",&u, &v, &x, &y);
-
-      if( u == x && v == y)
-         printf("%d\n", num[u][v]);
-      else if(u == 1 && v == 1)
-         printf("%d\n", dp[x][y]);
-      else{
+		scanf("%d %d %d %d",&u, &v, &x, &y);
 		result = dp[x][y]-dp[x][v-1]-dp[u-1][y]+dp[u-1][v-1];
 		printf("%d\n", result);
-      }
    }
 
    return 0;
